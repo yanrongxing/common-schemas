@@ -12,7 +12,10 @@ export enum ChainName {
   ETHEREUM_GOERLI = 'Goerli',
   ETHEREUM_KOVAN = 'Kovan',
   MATIC_MAINNET = 'Polygon',
-  MATIC_MUMBAI = 'Mumbai'
+  MATIC_MUMBAI = 'Mumbai',
+  BSC_MAINNET = 'Bianace',
+  BSC_TEST = 'Bianace Test',
+  TEST = 'Test'
 }
 
 /**
@@ -35,6 +38,13 @@ export function getChainId(chainName: ChainName): ChainId | null {
       return ChainId.MATIC_MAINNET
     case ChainName.MATIC_MUMBAI:
       return ChainId.MATIC_MUMBAI
+    case ChainName.BSC_MAINNET:
+      return ChainId.BSC_MAINNET
+    case ChainName.BSC_TEST:
+      return ChainId.BSC_TEST
+    case ChainName.TEST:
+      return ChainId.TEST
+
     default:
       return null
   }

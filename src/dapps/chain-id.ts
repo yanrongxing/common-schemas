@@ -14,7 +14,10 @@ export enum ChainId {
   ETHEREUM_GOERLI = 5,
   ETHEREUM_KOVAN = 42,
   MATIC_MAINNET = 137,
-  MATIC_MUMBAI = 80001
+  MATIC_MUMBAI = 80001,
+  BSC_MAINNET = 56,
+  BSC_TEST = 97,
+  TEST = 1337
 }
 
 /**
@@ -36,6 +39,12 @@ export function getChainName(chainId: ChainId): ChainName | null {
     case ChainId.MATIC_MAINNET:
       return ChainName.MATIC_MAINNET
     case ChainId.MATIC_MUMBAI:
+      return ChainName.MATIC_MUMBAI
+    case ChainId.BSC_MAINNET:
+      return ChainName.MATIC_MUMBAI
+    case ChainId.BSC_TEST:
+      return ChainName.MATIC_MUMBAI
+    case ChainId.TEST:
       return ChainName.MATIC_MUMBAI
     default:
       return null
@@ -62,6 +71,12 @@ export function getURNProtocol(chainId: ChainId): string {
       return 'matic'
     case ChainId.MATIC_MUMBAI:
       return 'mumbai'
+    case ChainId.BSC_MAINNET:
+      return 'bianace'
+    case ChainId.BSC_TEST:
+      return 'bianace'
+    case ChainId.TEST:
+      return 'test'
   }
 }
 
@@ -111,6 +126,21 @@ export function getNetworkMapping(chainId: ChainId): {
         [Network.ETHEREUM]: ChainId.MATIC_MUMBAI,
         [Network.MATIC]: ChainId.MATIC_MUMBAI
       }
+    case ChainId.BSC_MAINNET:
+      return {
+        [Network.ETHEREUM]: ChainId.BSC_MAINNET,
+        [Network.MATIC]: ChainId.BSC_MAINNET
+      }
+    case ChainId.BSC_TEST:
+      return {
+        [Network.ETHEREUM]: ChainId.BSC_TEST,
+        [Network.MATIC]: ChainId.BSC_TEST
+      }
+    case ChainId.TEST:
+      return {
+        [Network.ETHEREUM]: ChainId.TEST,
+        [Network.MATIC]: ChainId.TEST
+      }
   }
 }
 
@@ -120,6 +150,7 @@ export function getNetworkMapping(chainId: ChainId): {
  */
 export function getNetwork(chainId: ChainId): Network {
   switch (chainId) {
+    case ChainId.TEST:
     case ChainId.ETHEREUM_MAINNET:
     case ChainId.ETHEREUM_ROPSTEN:
     case ChainId.ETHEREUM_GOERLI:
@@ -129,6 +160,9 @@ export function getNetwork(chainId: ChainId): Network {
     case ChainId.MATIC_MAINNET:
     case ChainId.MATIC_MUMBAI:
       return Network.MATIC
+    case ChainId.BSC_MAINNET:
+    case ChainId.BSC_TEST:
+      return Network.BSC
   }
 }
 

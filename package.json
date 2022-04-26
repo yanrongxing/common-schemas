@@ -1,6 +1,6 @@
 {
-  "version": "0.0.0",
-  "name": "@dcl/schemas",
+  "version": "0.0.1",
+  "name": "@yanrongxing/schemas",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "license": "Apache-2.0",
@@ -29,5 +29,18 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanrongxing/common-schemas.git"
+  },
+  "description": "```bash\r npm i @dcl/schemas\r ```",
+  "bugs": {
+    "url": "https://github.com/yanrongxing/common-schemas/issues"
+  },
+  "homepage": "https://github.com/yanrongxing/common-schemas#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": ""
 }
