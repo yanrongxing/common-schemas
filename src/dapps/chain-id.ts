@@ -41,11 +41,11 @@ export function getChainName(chainId: ChainId): ChainName | null {
     case ChainId.MATIC_MUMBAI:
       return ChainName.MATIC_MUMBAI
     case ChainId.BSC_MAINNET:
-      return ChainName.MATIC_MUMBAI
+      return ChainName.BSC_MAINNET
     case ChainId.BSC_TEST:
-      return ChainName.MATIC_MUMBAI
+      return ChainName.BSC_TEST
     case ChainId.TEST:
-      return ChainName.MATIC_MUMBAI
+      return ChainName.TEST
     default:
       return null
   }
