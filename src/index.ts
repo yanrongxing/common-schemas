@@ -30,6 +30,7 @@ export { SaleType } from './dapps/sale-type'
 export { Sale, SaleFilters, SaleSortBy } from './dapps/sale'
 export { Store } from './dapps/store'
 export { WearableCategory } from './dapps/wearable-category'
+export { PropsCategory } from './dapps/props-category'
 export { WearableGender } from './dapps/wearable-gender'
 export {
   World,

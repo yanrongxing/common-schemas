@@ -17,6 +17,7 @@ export type Order = {
   updatedAt: number
   network: Network
   chainId: ChainId
+  quantity: number
 }
 
 export type OrderFilters = {
@@ -75,7 +76,10 @@ export namespace Order {
       },
       updatedAt: {
         type: 'integer'
-      }
+      },
+      quantity: {
+        type: 'integer'
+      },
     },
     required: [
       'id',
@@ -90,7 +94,8 @@ export namespace Order {
       'chainId',
       'expiresAt',
       'createdAt',
-      'updatedAt'
+      'updatedAt',
+      'quantity'
     ]
   }
 

@@ -4,6 +4,7 @@ import { ChainId } from './chain-id'
 import { EmoteCategory } from './emote-category'
 import { Network } from './network'
 import { NFTCategory } from './nft-category'
+import { PropsCategory } from './props-category'
 import { Rarity } from './rarity'
 import { WearableCategory } from './wearable-category'
 import { WearableGender } from './wearable-gender'
@@ -20,6 +21,7 @@ export type NFT = {
   url: string
   issuedId: string | null
   itemId: string | null
+  balance: string | null
   data: {
     parcel?: {
       x: string
@@ -50,6 +52,12 @@ export type NFT = {
       category: EmoteCategory
       rarity: Rarity
       bodyShapes: BodyShape[]
+    }
+    props?: {
+      owner: string
+      name: string
+      description: string
+      category: PropsCategory
     }
   }
   network: Network
@@ -232,6 +240,23 @@ export namespace NFT {
             },
             required: ['bodyShapes', 'category', 'description', 'rarity'],
             nullable: true
+          },
+          props: {
+            type: 'object',
+            properties: {
+              category: PropsCategory.schema,
+              name: {
+                type: 'string'
+              },
+              description: {
+                type: 'string'
+              },
+              owner: {
+                type: 'string'
+              }
+            },
+            required: ['name', 'category', 'description', 'owner'],
+            nullable: true
           }
         },
         required: []
@@ -241,6 +266,10 @@ export namespace NFT {
         nullable: true
       },
       itemId: {
+        type: 'string',
+        nullable: true
+      },
+      balance: {
         type: 'string',
         nullable: true
       },
@@ -274,7 +303,8 @@ export namespace NFT {
       'chainId',
       'createdAt',
       'updatedAt',
-      'soldAt'
+      'soldAt',
+      'balance'
     ]
   }
 

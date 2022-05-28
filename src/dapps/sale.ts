@@ -17,6 +17,7 @@ export type Sale = {
   txHash: string
   network: Network
   chainId: ChainId
+  quantity: string
 }
 
 export enum SaleSortBy {
@@ -57,6 +58,9 @@ export namespace Sale {
         type: 'string'
       },
       price: {
+        type: 'string'
+      },
+      quantity: {
         type: 'string'
       },
       contractAddress: {

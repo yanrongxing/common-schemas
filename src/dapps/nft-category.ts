@@ -4,6 +4,7 @@ export enum NFTCategory {
   PARCEL = 'parcel',
   ESTATE = 'estate',
   WEARABLE = 'wearable',
+  PROPS = 'props',
   ENS = 'ens',
   EMOTE = 'emote'
 }

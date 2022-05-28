@@ -7,7 +7,8 @@ import { generateValidator, JSONSchema, ValidateFunction } from '../validation'
 export enum Network {
   ETHEREUM = 'ETHEREUM',
   MATIC = 'MATIC',
-  BSC = 'BSC'
+  BSC = 'BSC',
+  TEST = 'TEST'
 }
 
 /**
